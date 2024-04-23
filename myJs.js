@@ -170,7 +170,7 @@ Plan.createMyUI = function(){
 			$('handleBook').textContent = "关闭本书" ;
 		 }, 200);
 
-	let book = Model.books[Model.bookIndex] ;
+  let book = Model.books[Model.bookIndex] ;
 		Model.bookIsOpen = true ;
 		$('mediaUI').style.display = 'block' ;
      
@@ -186,15 +186,20 @@ function playVideoBook(){
 	let videos = book ;
 	let i = Model.fileIndex ;
 	UI.log($('book'),"播放NO."+(i+1)+" / "+videos.files.length+"号视频！") ;
-	mediaPlayer($('myV') , videos.URL + videos.files[i]) ;
+ //本版代码把mp3和mp4资源文件全部上传至远程服务器，需要对接远程，作必要的改动和调试代码的响应！
+    let url = videos.remote + videos.URL  + videos.files[i] ;
+	mediaPlayer($('myV') , url) ;
   } //end of function playVideo()
+
 function playAudioBook(){
+	let audios = book ; 
 	let i = Model.fileIndex ;
-	let chapters =  book.chapters[i] ? book.chapters[i] : [];
-	 $('bookMenu').style.display = 'block' ;  
-    let url = book.URL + book.files[i] ;
+	UI.log($('book'),"进入 Part "+(i+1)+" / "+audios.files.length+"的学习！") ;
+	let url = audios.remote + audios.URL + audios.files[i] ;
 	 mediaPlayer($('myA') , url) ;
-	
+	 
+	 let chapters =  audios.chapters[i] ? audios.chapters[i] : [];
+	 $('bookMenu').style.display = 'block' ;  
 	let dadDom = $("bookMenu") ;
 		dadDom.textContent = "" ;
 	if( chapters.length){
