@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1">
+
+    <style>
+        body {
+            text-align: center;
+        }
+
+        header {
+            border: 2px solid blue;
+            height: 10%;
+            background-color: rgb(75, 156, 209);
+            color: white;
+        }
+
+        nav {
+            border: 2px solid blue;
+            height: 5%;
+        }
+
+        main {
+            height: 75%;
+            background-image: url("../lesson/CSS.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        footer {
+            border: 2px solid blue;
+            height: 10%;
+            background-color: bisque;
+            color: rgb(6, 99, 68);
+        }
+
+        p#book {
+            font-size: 1.8em;
+            letter-spacing: 0.1em;
+        }
+
+        button {
+            font-size: 1.2em;
+            margin-right: 1em;
+        }
+    </style>
+    <title> "读好书、练思维、爱编程" </title>
+</head>
+
+<body>
+    <header>
+        <p id="book">
+            计算思维系列课程
+        </p>
+    </header>
+    <nav>
+        <button>
+            导航1
+        </button>
+        <button>
+            导航2
+        </button>
+        <button>
+            导航3
+        </button>
+    </nav>
+    <main>
+
+    </main>
+
+
+    <footer>
+        <p id="statusInfo">
+            CopyRight from 彭丽娟 江西科技师范大学 2022--2025
+        </p>
+    </footer>
+    <script>
+        var UI = {};
+        UI.deviceWidth = window.innerWidth;
+        UI.deviceHeight = window.innerHeight;
+        document.body.style.height = UI.deviceHeight + "px";
+        document.body.style.fontSize = UI.deviceWidth / 24 + "px";
+    </script>
+</body>
+
+</html>
